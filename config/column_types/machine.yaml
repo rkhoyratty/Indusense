@@ -1,0 +1,36 @@
+# Types des colonnes de datas/machine.sql.txt (une section par table SQL)
+# Types autorisés : IDENTITY, BOOLEAN, INTEGER, FLOAT, DATE, DATETIME, TIME, CATEGORY, TEXT
+#   IDENTITY  identifiant / clé (pas de statistiques)
+#   INTEGER, FLOAT            -> min, max, moyenne, médiane
+#   DATE, DATETIME, TIME      -> min, max
+#   BOOLEAN, CATEGORY, TEXT   -> pas de statistiques
+# Une colonne absente de ce fichier est typée d'après le CREATE TABLE (clé -> IDENTITY, type SQL), sinon par inférence.
+
+source: machine.sql.txt
+
+tables:
+  machine:
+    machine_code: IDENTITY
+    commissioning_date: DATE
+    max_daily_capacity: INTEGER
+    max_hourly_capacity_pieces: INTEGER
+    model: CATEGORY
+    production_line: CATEGORY
+    location: CATEGORY
+    criticality: CATEGORY
+    is_active: BOOLEAN
+    created_at: DATETIME
+    updated_at: DATETIME
+
+  maintenance:
+    maintenance_id: IDENTITY
+    machine_code: IDENTITY
+    maintenance_at: DATETIME
+    maintenance_type: CATEGORY
+    action_type: CATEGORY
+    component: CATEGORY
+    description: TEXT
+    related_incident_id: IDENTITY
+    duration_hours: FLOAT
+    created_at: DATETIME
+    updated_at: DATETIME

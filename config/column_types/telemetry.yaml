@@ -1,0 +1,18 @@
+# Types des colonnes de datas/telemetry.csv
+# Types autorisés : IDENTITY, BOOLEAN, INTEGER, FLOAT, DATE, DATETIME, TIME, CATEGORY, TEXT
+#   IDENTITY  identifiant / clé (pas de statistiques)
+#   INTEGER, FLOAT            -> min, max, moyenne, médiane
+#   DATE, DATETIME, TIME      -> min, max
+#   BOOLEAN, CATEGORY, TEXT   -> pas de statistiques
+# Une colonne absente de ce fichier est typée par inférence automatique.
+
+source: telemetry.csv
+
+columns:
+  machine_id: IDENTITY
+  timestamp: DATETIME
+  temperature_c: FLOAT
+  pressure_bar: FLOAT
+  voltage_mean_v: FLOAT
+  rotation_mean_rpm: FLOAT
+  pieces_produced: INTEGER

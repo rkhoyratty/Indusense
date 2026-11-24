@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.15"
 dependencies = [
     "pandas>=3.1.1",
+    "pyyaml>=6.0.4",
     "sqlalchemy>=2.1.9",
     "sqlglot>=30.33.0",
 ]
